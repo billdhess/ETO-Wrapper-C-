@@ -119,6 +119,9 @@ namespace ETO
             {
                 try
                 {
+                    /* 
+                        The background form querries the list of active members in the project.
+                    /*
                     frmWebBackground.Show();
                 }
                 catch 

@@ -28,35 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.etoBrowser = new System.Windows.Forms.WebBrowser();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.participantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notInFamilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTouchpointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordEffortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.webBackground = new System.Windows.Forms.WebBrowser();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.showBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // etoBrowser
             // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.etoBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(0, 27);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1025, 554);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://secure.etosoftware.com", System.UriKind.Absolute);
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.etoBrowser.Location = new System.Drawing.Point(0, 27);
+            this.etoBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.etoBrowser.Name = "etoBrowser";
+            this.etoBrowser.ScriptErrorsSuppressed = true;
+            this.etoBrowser.Size = new System.Drawing.Size(1025, 554);
+            this.etoBrowser.TabIndex = 0;
+            this.etoBrowser.Url = new System.Uri("https://secure.etosoftware.com", System.UriKind.Absolute);
+            this.etoBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.etoBrowser_DocumentCompleted);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.participantsToolStripMenuItem,
+            this.entitiesToolStripMenuItem,
             this.showBackgroundToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -78,6 +85,51 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // participantsToolStripMenuItem
+            // 
+            this.participantsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.notInFamilesToolStripMenuItem,
+            this.viewTouchpointsToolStripMenuItem});
+            this.participantsToolStripMenuItem.Name = "participantsToolStripMenuItem";
+            this.participantsToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.participantsToolStripMenuItem.Text = "Participants";
+            // 
+            // notInFamilesToolStripMenuItem
+            // 
+            this.notInFamilesToolStripMenuItem.Name = "notInFamilesToolStripMenuItem";
+            this.notInFamilesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.notInFamilesToolStripMenuItem.Text = "Not in Familes";
+            this.notInFamilesToolStripMenuItem.Click += new System.EventHandler(this.notInFamilesToolStripMenuItem_Click);
+            // 
+            // viewTouchpointsToolStripMenuItem
+            // 
+            this.viewTouchpointsToolStripMenuItem.Name = "viewTouchpointsToolStripMenuItem";
+            this.viewTouchpointsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.viewTouchpointsToolStripMenuItem.Text = "View Touchpoints";
+            this.viewTouchpointsToolStripMenuItem.Click += new System.EventHandler(this.viewTouchpointsToolStripMenuItem_Click);
+            // 
+            // entitiesToolStripMenuItem
+            // 
+            this.entitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recordEffortToolStripMenuItem});
+            this.entitiesToolStripMenuItem.Name = "entitiesToolStripMenuItem";
+            this.entitiesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.entitiesToolStripMenuItem.Text = "Entities";
+            // 
+            // recordEffortToolStripMenuItem
+            // 
+            this.recordEffortToolStripMenuItem.Name = "recordEffortToolStripMenuItem";
+            this.recordEffortToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.recordEffortToolStripMenuItem.Text = "Record Effort";
+            this.recordEffortToolStripMenuItem.Click += new System.EventHandler(this.recordEffortToolStripMenuItem_Click);
+            // 
+            // showBackgroundToolStripMenuItem
+            // 
+            this.showBackgroundToolStripMenuItem.Name = "showBackgroundToolStripMenuItem";
+            this.showBackgroundToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.showBackgroundToolStripMenuItem.Text = "Show Background";
+            this.showBackgroundToolStripMenuItem.Click += new System.EventHandler(this.showBackgroundToolStripMenuItem_Click);
             // 
             // comboBox1
             // 
@@ -108,13 +160,6 @@
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
-            // showBackgroundToolStripMenuItem
-            // 
-            this.showBackgroundToolStripMenuItem.Name = "showBackgroundToolStripMenuItem";
-            this.showBackgroundToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.showBackgroundToolStripMenuItem.Text = "Show Background";
-            this.showBackgroundToolStripMenuItem.Click += new System.EventHandler(this.showBackgroundToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +167,7 @@
             this.ClientSize = new System.Drawing.Size(1025, 578);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.etoBrowser);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.webBackground);
             this.MainMenuStrip = this.menuStrip1;
@@ -144,8 +189,13 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.WebBrowser webBackground;
         private System.Windows.Forms.Splitter splitter1;
-        public System.Windows.Forms.WebBrowser webBrowser1;
+        public System.Windows.Forms.WebBrowser etoBrowser;
         private System.Windows.Forms.ToolStripMenuItem showBackgroundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem participantsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem notInFamilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewTouchpointsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entitiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordEffortToolStripMenuItem;
     }
 }
 

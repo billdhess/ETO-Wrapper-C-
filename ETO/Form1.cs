@@ -14,7 +14,6 @@ namespace ETO
 {
     public partial class Form1 : Form
     {
-        private bool result;
         private string sCLID;
         private FormWebBackground frmWebBackground = null;
         public Form1()
@@ -76,7 +75,7 @@ namespace ETO
             Application.Exit();
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void etoBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             HtmlDocument myDoc;
             string sUrl = e.Url.ToString();
@@ -90,7 +89,7 @@ namespace ETO
             }
             if (sUrl.StartsWith("https://secure.etosoftware.com/Modules/Dashboard/Participant.aspx?ActorID=C"))
             {
-                myDoc = webBrowser1.Document.Window.Frames["Body"].Document;
+                myDoc = etoBrowser.Document.Window.Frames["Body"].Document;
                 string sForm = myDoc.GetElementById("form1").OuterHtml.ToString();
                 int sc = sForm.IndexOf("ActorID=C", StringComparison.OrdinalIgnoreCase) + 9;
                 int ec = sForm.IndexOf(" Method=Post", StringComparison.OrdinalIgnoreCase);
@@ -112,6 +111,10 @@ namespace ETO
             string sUrl = e.Url.ToString();
             //Debug.Print("Background="+sUrl);
         }
+        private void notInFamilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            etoBrowser.Navigate("https://Secure.etosoftware.com/Modules/Household/NonFamilyMembers.aspx", "Body");
+        }
 
         private void showBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -119,10 +122,7 @@ namespace ETO
             {
                 try
                 {
-                    /* 
-                        The background form querries the list of active members in the project.
-                    /*
-                    frmWebBackground.Show();
+            frmWebBackground.Show();
                 }
                 catch 
                 {
@@ -130,6 +130,17 @@ namespace ETO
                 }
                 
             }
+        }
+
+        private void viewTouchpointsToolStripMenuItem_Click(object sender, EventArgs e)
+        { 
+            etoBrowser.Navigate("https://secure.etosoftware.com/Modules/Participants/ViewEditParticipant.aspx?SearchType=Form&pn=View Participant TouchPoints", "Body");
+        }
+
+        private void recordEffortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            etoBrowser.Navigate("https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=C", "Body",null, "Referer: https://secure.etosoftware.com/addnew.asp");
+            //https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=E
         }
     }
 }

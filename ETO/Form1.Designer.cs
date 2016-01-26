@@ -35,9 +35,12 @@
             this.participantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notInFamilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTouchpointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordEffortToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.entitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordEffortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.webBackground = new System.Windows.Forms.WebBrowser();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -64,7 +67,8 @@
             this.fileToolStripMenuItem,
             this.participantsToolStripMenuItem,
             this.entitiesToolStripMenuItem,
-            this.showBackgroundToolStripMenuItem});
+            this.showBackgroundToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1025, 24);
@@ -90,7 +94,8 @@
             // 
             this.participantsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.notInFamilesToolStripMenuItem,
-            this.viewTouchpointsToolStripMenuItem});
+            this.viewTouchpointsToolStripMenuItem,
+            this.recordEffortToolStripMenuItem1});
             this.participantsToolStripMenuItem.Name = "participantsToolStripMenuItem";
             this.participantsToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.participantsToolStripMenuItem.Text = "Participants";
@@ -108,6 +113,13 @@
             this.viewTouchpointsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.viewTouchpointsToolStripMenuItem.Text = "View Touchpoints";
             this.viewTouchpointsToolStripMenuItem.Click += new System.EventHandler(this.viewTouchpointsToolStripMenuItem_Click);
+            // 
+            // recordEffortToolStripMenuItem1
+            // 
+            this.recordEffortToolStripMenuItem1.Name = "recordEffortToolStripMenuItem1";
+            this.recordEffortToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.recordEffortToolStripMenuItem1.Text = "Record Effort";
+            this.recordEffortToolStripMenuItem1.Click += new System.EventHandler(this.recordEffortToolStripMenuItem1_Click);
             // 
             // entitiesToolStripMenuItem
             // 
@@ -130,6 +142,21 @@
             this.showBackgroundToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.showBackgroundToolStripMenuItem.Text = "Show Background";
             this.showBackgroundToolStripMenuItem.Click += new System.EventHandler(this.showBackgroundToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // comboBox1
             // 
@@ -196,6 +223,9 @@
         private System.Windows.Forms.ToolStripMenuItem viewTouchpointsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entitiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordEffortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordEffortToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

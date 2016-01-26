@@ -79,13 +79,22 @@ namespace ETO
         {
             HtmlDocument myDoc;
             string sUrl = e.Url.ToString();
-            //Debug.Print("Browser" + sUrl);
             //
             if (sUrl.StartsWith("https://secure.etosoftware.com/Modules/Dashboard/Personal.aspx"))
             {
-                frmWebBackground = new FormWebBackground(this);
-                frmWebBackground.webBackground.Navigate("https://secure.etosoftware.com/SearchForClientResultExpanded.asp?fromNav=yes&SearchResult=Enter%20Search%20Term%28s%29");
 
+                if ((frmWebBackground == null))
+                {
+                    frmWebBackground = new FormWebBackground(this);
+                }
+                else
+                {
+                    if (frmWebBackground.IsDisposed)
+                    {
+                        frmWebBackground = new FormWebBackground(this);
+                    }
+                }
+                //frmWebBackground.webBackground.Navigate("https://secure.etosoftware.com/SearchForClientResultExpanded.asp?fromNav=yes&SearchResult=Enter%20Search%20Term%28s%29");
             }
             if (sUrl.StartsWith("https://secure.etosoftware.com/Modules/Dashboard/Participant.aspx?ActorID=C"))
             {
@@ -109,27 +118,34 @@ namespace ETO
         private void webBackground_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             string sUrl = e.Url.ToString();
-            //Debug.Print("Background="+sUrl);
         }
         private void notInFamilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             etoBrowser.Navigate("https://Secure.etosoftware.com/Modules/Household/NonFamilyMembers.aspx", "Body");
         }
 
-        private void showBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frmWebBackground != null)
+    private void showBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if ((frmWebBackground == null))
             {
-                try
+                frmWebBackground = new FormWebBackground(this);
+            }
+        else
+            {
+                if (frmWebBackground.IsDisposed)
                 {
-            frmWebBackground.Show();
+                    frmWebBackground = new FormWebBackground(this);
                 }
-                catch 
+            }
+            frmWebBackground.webBackground.Navigate("https://secure.etosoftware.com/SearchForClientResultExpanded.asp?fromNav=yes&SearchResult=Enter%20Search%20Term%28s%29");
+            try
+                {
+                    frmWebBackground.Show();
+                }
+            catch 
                 {
                     // Don't do anything.  Object has been closed
-                }
-                
-            }
+                }                
         }
 
         private void viewTouchpointsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,8 +155,18 @@ namespace ETO
 
         private void recordEffortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            etoBrowser.Navigate("https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=C", "Body",null, "Referer: https://secure.etosoftware.com/addnew.asp");
-            //https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=E
+            etoBrowser.Navigate("https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=E", "Body",null, "Referer: https://secure.etosoftware.com/addnew.asp");
+        }
+
+        private void recordEffortToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            etoBrowser.Navigate("https://secure.etosoftware.com/RecordOutcomeHx.asp?selType=C", "Body", null, "Referer: https://secure.etosoftware.com/addnew.asp");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmAbout = new FormAbout();
+            frmAbout.ShowDialog(this);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ETO
     {
         private bool result;
         private string sCLID;
-
+        private FormWebBackground frmWebBackground = null;
         public Form1()
         {
             InitializeComponent();
@@ -84,9 +84,9 @@ namespace ETO
             //
             if (sUrl.StartsWith("https://secure.etosoftware.com/Modules/Dashboard/Personal.aspx"))
             {
-                FormWebBackground frmWebBackground = new FormWebBackground(this);
-                frmWebBackground.Show();
-                webBackground.Navigate("https://secure.etosoftware.com/SearchForClientResultExpanded.asp?fromNav=yes&SearchResult=Enter%20Search%20Term%28s%29");
+                frmWebBackground = new FormWebBackground(this);
+                frmWebBackground.webBackground.Navigate("https://secure.etosoftware.com/SearchForClientResultExpanded.asp?fromNav=yes&SearchResult=Enter%20Search%20Term%28s%29");
+
             }
             if (sUrl.StartsWith("https://secure.etosoftware.com/Modules/Dashboard/Participant.aspx?ActorID=C"))
             {
@@ -111,6 +111,22 @@ namespace ETO
         {
             string sUrl = e.Url.ToString();
             //Debug.Print("Background="+sUrl);
+        }
+
+        private void showBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmWebBackground != null)
+            {
+                try
+                {
+                    frmWebBackground.Show();
+                }
+                catch 
+                {
+                    // Don't do anything.  Object has been closed
+                }
+                
+            }
         }
     }
 }

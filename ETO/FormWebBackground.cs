@@ -28,5 +28,10 @@ namespace ETO
         {
 
         }
+
+        private void webBackground_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
     }
 }

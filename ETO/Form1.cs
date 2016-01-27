@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ETO
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         private string sCLID;
         private FormWebBackground frmWebBackground = null;
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
@@ -167,6 +167,12 @@ namespace ETO
         {
             Form frmAbout = new FormAbout();
             frmAbout.ShowDialog(this);
+        }
+
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmConfig = new FormConfig();
+            frmConfig.ShowDialog(this);
         }
     }
 }

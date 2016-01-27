@@ -19,10 +19,10 @@ namespace ETO
             InitializeComponent();
         }
 
-        private Form1 mainForm = null;
+        private FormMain mainForm = null;
         public FormWebBackground(Form callingForm)
         {
-            mainForm = callingForm as Form1;
+            mainForm = callingForm as FormMain;
             InitializeComponent();
         }
 
